@@ -12,23 +12,28 @@
   <div id="app"></div>
   <script type="module" src="/src/main.js"></script>
 
-  <details>
-    <summary>Load TopNavigation</summary>
-    <button onclick="load()">load</button>
-    <script type="module" src="/dist/scripts/TopNavigation.js"></script>
-    <script>
-      function load() {
-        import("/dist/scripts/TopNavigation.js")
-        .then(response => {
-          new response.default({
-            target: document.body
-          });
-        })
-        .catch(()=> {
-          alert("run 'npm run build' to generate js file");
-        })
-      }
-    </script>
-  </details>
+
+  <footer>
+    <details>
+      <summary>Load TopNavigation</summary>
+      <button onclick="load()">load</button>
+      <script type="module" src="/dist/scripts/TopNavigation.js"></script>
+      <script>
+        function load() {
+          import("/dist/scripts/TopNavigation.js")
+            .then(response => {
+              new response.default({
+                target: document.body
+              });
+            })
+            .catch(() => {
+              alert("run 'npm run build' to generate js file");
+            })
+        }
+      </script>
+
+    </details>
+  </footer>
 </body>
+
 </html>
